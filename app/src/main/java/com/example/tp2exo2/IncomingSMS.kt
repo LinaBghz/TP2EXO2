@@ -21,32 +21,7 @@ class IncomingSMS : BroadcastReceiver() {
          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
                     for (sms : SmsMessage in Telephony.Sms.Intents.getMessagesFromIntent(intent))
                     {
-                       Toast.makeText(context, sms.displayMessageBody,Toast.LENGTH_LONG).show()
 
-//                        val pIntent = PendingIntent.getActivity(context, System.currentTimeMillis().toInt(), intent, 0)
-//                        val notifManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                        val mChannel = NotificationChannel(
-//                            channelId, channelName, importance)
-//                        notifManager.createNotificationChannel(mChannel)
-//                        val noti = Notification.Builder(context,"ch23")
-//                            .setContentTitle("Text Received")
-//                            .setContentText(sms.displayMessageBody).setSmallIcon(android.R.drawable.btn_star)
-//                            .setContentIntent(pIntent).setAutoCancel(true)
-//
-//                            .build()
-//                        notifManager.notify(0, noti)}
-//                        else{
-//
-//                            val noti = Notification.Builder(context)
-//                                .setContentTitle("Text Received")
-//                                .setContentText(sms.displayMessageBody).setSmallIcon(android.R.drawable.btn_star)
-//                                .setContentIntent(pIntent).setAutoCancel(true)
-//
-//                                .build()
-//                            notifManager.notify(0, noti)
-//
-//                        }
 
                         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -69,4 +44,4 @@ class IncomingSMS : BroadcastReceiver() {
                     }
                 }
       }
-   // }
+
